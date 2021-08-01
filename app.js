@@ -1,4 +1,12 @@
+const ourCLInput = process.argv.slice(2, process.argv.length); // capture CLI input from third index
+// console.log(ourCLInput);
 
+const printOutCLInput = theArray => console.log(theArray); // arrow function to display it
+
+printOutCLInput(ourCLInput);
+
+
+/* history */
 
 // const animalArray = ['dog','cat','cow'];
 // animalArray.push('pig');
@@ -143,10 +151,5 @@
 // };
 
 
-const ourCLInput = process.argv.slice(2, process.argv.length); // capture CLI input from third index
-// console.log(ourCLInput);
 
-const printOutCLInput = theArray => console.log(theArray); // arrow function to display it
-
-printOutCLInput(ourCLInput);
 
