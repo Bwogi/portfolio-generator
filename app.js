@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 console.log('');
 const generatePage = () => 'Name: Andrew, Github: bwogihub';
 console.log(generatePage());
@@ -26,8 +28,8 @@ const cLCapture = process.argv.slice(2, process.argv.length);
 // use destructuring 
 let [theName, githubName] = cLCapture;
 
-console.log(theName, githubName);
-console.log(generateAnotherPage(theName, githubName));
+// console.log(theName, githubName);
+// console.log(generateAnotherPage(theName, githubName));
 
 
  const generateThisPage = (name, githubName) => {
@@ -47,8 +49,13 @@ console.log(generateAnotherPage(theName, githubName));
     </html>`
 };
 
-console.log(generateThisPage(theName, githubName));
+// console.log(generateThisPage(theName, githubName));
 
+fs.writeFile('index.html', generateThisPage(theName, githubName), err => {
+    if(err) throw err;
+    console.log('Portfolio Complete! Check out the index.html to see the output.');
+}
+);
 
 
 // const ourCLInput = process.argv.slice(2, process.argv.length); // capture CLI input from third index
